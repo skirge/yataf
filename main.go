@@ -20,7 +20,7 @@ func main() {
 		Content = fetch.GetContentOfLocalFile(Arguments.File)
 	}
 
-	Results := analyze.AnalyzeContent(Content, Arguments.Types)
+	Results := analyze.AnalyzeContent(Content, Arguments.Types, Arguments.Meg)
 
 	if len(Results.Result) == 0 {
 		fmt.Printf("\033[31m[i] No results found\033[0m\n")

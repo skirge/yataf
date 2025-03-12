@@ -7,13 +7,25 @@ import (
 	"strings"
 )
 
-func AnalyzeContent(Content string, Types []string) _struct.Results {
+func AnalyzeContent(Content string, Types []string, meg bool) _struct.Results {
 
 	RegularExpressionConfig := config.GetRegExConfig(Types)
 	NegativeExtractions := config.GetNegativeExtractions()
 
 	var Results _struct.Results
 	FoundExtractions := make(map[string]bool)
+
+	if meg {
+		var prev rune
+
+		for i, c := range Content {
+			if prev == '\n' && c == '<' {
+				Content = Content[i:]
+				break
+			}
+			prev = c
+		}
+	}
 
 	for _, RegEx := range RegularExpressionConfig.Elements {
 
