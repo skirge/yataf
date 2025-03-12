@@ -11,6 +11,7 @@ func GetNegativeExtractions() map[string]string {
 		"http://mysite.com/":                 "contains",
 		"github.com/indutny/elliptic":        "contains",
 		"registry.npmjs.org/elliptic/-/":     "contains",
+		"incognito":     "contains",
 	}
 
 }

@@ -8,6 +8,13 @@ import (
 func GetRegExConfig(Types []string) _struct.RegExConfig {
 	Config := _struct.RegExConfig{
 		Elements: []_struct.RegEx{
+			{Type: "Cloud", Name: "AWS regions", Matcher: `((us|eu|ap|sa|ca|me|af)-(east|west|central|north|south).*)`},
+			{Type: "Cloud", Name: "AWS Lambda", Matcher : `execute-api.*?aws.*?com` },
+			{Type: "Cloud", Name: "AWS Cognito", Matcher : `cognito.*?aws.*?com`  },
+			{Type: "Cloud", Name: "AWS Cognito pool", Matcher : `(?im)userPool` },
+			{Type: "Cloud", Name: "Azure Tenant subdomain", Matcher : `[A-Za-z0-9-]+.onmicrosoft.com` },
+			{Type: "Cloud", Name: "Azure Tenant Auth", Matcher : `[A-Za-z0-9-]+.ciamlogin.com` },
+			{Type: "Cloud", Name: "Azure clientId", Matcher : `clientId:.*` },
 			{Type: "Credentials", Name: "User/Pass Case#1", Matcher: `(?im)['|"](user|username|mail|email|access|ident|login)['|"](\s*?):(\s*?)['|"].*?['|"](\s*?),(\s*?)['|"](pass|password|passwordpassive|authkey|credentials|access_key|apikey|secret|access)['|"](\s*?):(\s*?)['|"].*?['|"]`},
 			{Type: "Credentials", Name: "JS const/var", Matcher: `(?i)(var|const|let)(\s*?)(pass|password|passwordpassive|authkey|credentials|access_key|apikey|secret|access)(\s*?)(=|:)(\s*?)['|"].*?['|"]`},
 			{Type: "Credentials", Name: "Slack Token", Matcher: `(xox[p|b|o|a]-[0-9]{12}-[0-9]{12}-[0-9]{12}-[a-z0-9]{32})`},
