@@ -4,6 +4,7 @@ import (
 	"github.com/dsecuredcom/yataf/pkg/config"
 	_struct "github.com/dsecuredcom/yataf/pkg/struct"
 	"regexp"
+	"fmt"
 	"strings"
 )
 
@@ -14,6 +15,9 @@ func AnalyzeContent(Content string, Types []string, meg bool) _struct.Results {
 
 	var Results _struct.Results
 	FoundExtractions := make(map[string]bool)
+
+	firstline := Content[:strings.IndexByte(Content, '\n')]
+	fmt.Printf("\033[34m[i] First Line: %s\033[0m\n", firstline)
 
 	if meg {
 		var prev rune
