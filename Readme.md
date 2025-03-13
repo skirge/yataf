@@ -5,10 +5,10 @@ against a given set of regular expressions.
 The main goal is to give you an idea if a files content might be of interest. This means that __yataf__ tries to find
 secrets in the content as well as potential endpoints.
 
-## Make
+## Install
 
 ```
-go build -o dist/yataf main.go
+go install -v github.com/skirge/yataf@latest
 ```
 
 ## Usage
@@ -36,6 +36,7 @@ Analyze a file using only regular expressions of type "credentials"
 * "all" (default)
 * "credentials"
 * "urls-paths"
+* "cloud"
 
 ## Good to know
 
