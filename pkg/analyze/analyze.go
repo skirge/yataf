@@ -1,8 +1,8 @@
 package analyze
 
 import (
-	"github.com/dsecuredcom/yataf/pkg/config"
-	_struct "github.com/dsecuredcom/yataf/pkg/struct"
+	"github.com/skirge/yataf/pkg/config"
+	_struct "github.com/skirge/yataf/pkg/struct"
 	"regexp"
 	"fmt"
 	"strings"
